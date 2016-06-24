@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentManager\Document.cs" />
+    <Compile Include="DocumentManager\DocumentManager.cs" />
+    <Compile Include="LinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WalletThingBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -11,18 +11,12 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-           var list1 = new LinkedList();
-            list1.AddLast(2);
-            list1.AddLast(4);
-            list1.AddLast("6");
-            foreach (var i in list1)
-            {
-                Console.WriteLine(i);
-            }
+            BankCard bc = new BankCard(1,1,1);
+            Wallet<>
             Console.ReadLine();
         }
     }
-
+    
     #region Animal
     class Animal
     {
@@ -38,59 +32,8 @@ namespace Demo
     {
         public override void Eat()
         {
-
+            Console.WriteLine("Cat eat");
         }
     }
     #endregion
-
-    #region LinkedListNode
-    public class LinkedListNode
-    {
-        public LinkedListNode(object value)
-        {
-            Value = value;
-        }
-        public object Value { get; private set; }
-        public LinkedListNode Next { get; internal set; }
-        public LinkedListNode Prev { get; internal set; }
-    }
-    #endregion
-
-    #region LinkedList
-
-    public class LinkedList : IEnumerable
-    {
-        public LinkedListNode First { get; private set; }
-        public LinkedListNode Last { get; private set; }
-
-        public LinkedListNode AddLast(object node)
-        {
-            var newNode = new LinkedListNode(node);
-            if (First == null)
-            {
-                First = newNode;
-                Last = First;
-            }
-            else
-            {
-                LinkedListNode previous = Last;
-                Last.Next = newNode;
-                Last = newNode;
-                Last.Prev = previous;
-            }
-            return newNode;
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            LinkedListNode current = First;
-            while (current != null)
-            {
-                yield return current.Value;
-                current = current.Next;
-            }
-        }
-    }
-    #endregion
-
 }
