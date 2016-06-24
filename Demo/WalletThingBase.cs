@@ -3,7 +3,15 @@ using System.Collections;
 
 namespace Demo
 {
-
+    /*
+    示例代码：
+     BankCard bc = new BankCard(1,1,1);
+            CreditCard cc = new CreditCard(1,1,1);
+            var wallet = new Wallet<CreditCard> {cc};
+            var wallet2 = new Wallet<int>();
+            wallet2.Add(2);
+            Console.WriteLine(wallet[0]);
+        */
     #region 钱包物品基类
 
     public class WalletThingBase
@@ -93,14 +101,16 @@ namespace Demo
         public Wallet()
         {
             Type baseType = typeof(T).BaseType;
-            while (baseType != null && baseType != typeof(object) && baseType.BaseType!= typeof(object))
+            while (baseType != null
+                && baseType != typeof(Object)
+               && baseType.BaseType != typeof(Object))
             {
                 baseType = baseType.BaseType;
             }
 
             if (baseType != typeof(WalletThingBase))
             {
-                throw new Exception(typeof(T)+"cannot be put into wallet");
+                throw new Exception(typeof(T) + "cannot be put into wallet");
             }
         }
 

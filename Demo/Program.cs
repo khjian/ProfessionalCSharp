@@ -11,9 +11,7 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            BankCard bc = new BankCard(1,1,1);
-            Wallet<>
-            Console.ReadLine();
+           Console.ReadLine();
         }
     }
     
