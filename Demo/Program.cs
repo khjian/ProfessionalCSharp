@@ -11,8 +11,9 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            int[] array = new[] {1, 2, 3, 4};
-            var bag = Tuple.Create<int, double, string>(2009, 5.19, "str");
+            string a = "aaa";
+            Console.WriteLine(Convert.ToInt32(a));
+
             Console.ReadLine();
         }
     }
