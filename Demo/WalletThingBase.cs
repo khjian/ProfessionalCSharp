@@ -4,6 +4,7 @@ using System.Collections;
 namespace Demo
 {
     /*
+     * 泛型类的例子
     示例代码：
      BankCard bc = new BankCard(1,1,1);
             CreditCard cc = new CreditCard(1,1,1);
