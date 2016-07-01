@@ -2,19 +2,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Demo
 {
+
     class Program
     {
+       
+        public static string StrAddTwo(string x)
+        {
+            return x + 2;
+        }
+
+        public static string StrAddThree(string x)
+        {
+            return x + 3;
+        }
+
+        public delegate string StrAdd(string x);
+
         static void Main(string[] args)
         {
-            string a = "aaa";
-            Console.WriteLine(Convert.ToInt32(a));
+            StrAdd strAdd = StrAddTwo;
+            Console.WriteLine(strAdd("Test"));
+            strAdd = StrAddThree;
+            Console.WriteLine(strAdd("Test"));
 
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
     
