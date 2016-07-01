@@ -12,26 +12,12 @@ namespace Demo
 
     class Program
     {
-       
-        public static string StrAddTwo(string x)
-        {
-            return x + 2;
-        }
-
-        public static string StrAddThree(string x)
-        {
-            return x + 3;
-        }
-
-        public delegate string StrAdd(string x);
-
+        private delegate string GetAString();
         static void Main(string[] args)
         {
-            StrAdd strAdd = StrAddTwo;
-            Console.WriteLine(strAdd("Test"));
-            strAdd = StrAddThree;
-            Console.WriteLine(strAdd("Test"));
-
+            var x = 40;
+            GetAString firstStringMethod = x.ToString;
+            Console.WriteLine("String is {0}", firstStringMethod());
             Console.ReadKey();
         }
     }
