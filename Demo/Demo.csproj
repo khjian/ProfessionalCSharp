@@ -47,6 +47,7 @@
     <Compile Include="BuddleSorter\Employee.cs" />
     <Compile Include="DocumentManager\Document.cs" />
     <Compile Include="DocumentManager\DocumentManager.cs" />
+    <Compile Include="GetAStringDemo\Currency.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="MathOperations.cs" />
     <Compile Include="Person.cs" />
