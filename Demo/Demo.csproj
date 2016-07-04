@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="BuddleSorter\BuddleSorter.cs" />
     <Compile Include="BuddleSorter\Employee.cs" />
+    <Compile Include="Delegates\CarDealer.cs" />
+    <Compile Include="Delegates\Consumer.cs" />
     <Compile Include="DocumentManager\Document.cs" />
     <Compile Include="DocumentManager\DocumentManager.cs" />
     <Compile Include="GetAStringDemo\Currency.cs" />
@@ -59,6 +61,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

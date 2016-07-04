@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Demo.Delegates;
 
 namespace Demo
 {
@@ -14,31 +15,35 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            var values = new List<int>() {1,2,3};
-            var funcs = new List<Func<int>>();
+            var dealer = new CarDealer();
 
-            foreach (var value in values)
-            {
-                funcs.Add(()=>value);
-            }
+            var michael = new Consumer("Michael");
+            dealer.NewCarInfo += michael.NewCarIsHere;
 
-            foreach (var f in funcs)
-            {
-                Console.WriteLine(f());
-            }
+            dealer.NewCar("Ferrari");
+
+            var sebastian = new Consumer("Sebastian");
+            dealer.NewCarInfo += sebastian.NewCarIsHere;
+
+            dealer.NewCar("Mercedes");
+
+            dealer.NewCarInfo -= michael.NewCarIsHere;
+            
+            dealer.NewCar("Red Bull Racing");
 
             Console.ReadKey();
         }
 
+        #region int数组冒泡排序
         static void sort(int[] sortArray)
         {
             bool swapped = true;
             do
             {
                 swapped = false;
-                for (int i = 0; i < sortArray.Length-1; i++)
+                for (int i = 0; i < sortArray.Length - 1; i++)
                 {
-                    if (sortArray[i]>sortArray[i+1])
+                    if (sortArray[i] > sortArray[i + 1])
                     {
                         int temp = sortArray[i];
                         sortArray[i] = sortArray[i + 1];
@@ -51,9 +56,10 @@ namespace Demo
             //查看排序结果
             foreach (var item in sortArray)
             {
-               Console.WriteLine(item);
+                Console.WriteLine(item);
             }
         }
+        #endregion
     }
     
     #region Animal
