@@ -12,27 +12,47 @@ namespace Demo
 
     class Program
     {
-       
-        public static string StrAddTwo(string x)
-        {
-            return x + 2;
-        }
-
-        public static string StrAddThree(string x)
-        {
-            return x + 3;
-        }
-
-        public delegate string StrAdd(string x);
-
         static void Main(string[] args)
         {
-            StrAdd strAdd = StrAddTwo;
-            Console.WriteLine(strAdd("Test"));
-            strAdd = StrAddThree;
-            Console.WriteLine(strAdd("Test"));
+            var values = new List<int>() {1,2,3};
+            var funcs = new List<Func<int>>();
+
+            foreach (var value in values)
+            {
+                funcs.Add(()=>value);
+            }
+
+            foreach (var f in funcs)
+            {
+                Console.WriteLine(f());
+            }
 
             Console.ReadKey();
+        }
+
+        static void sort(int[] sortArray)
+        {
+            bool swapped = true;
+            do
+            {
+                swapped = false;
+                for (int i = 0; i < sortArray.Length-1; i++)
+                {
+                    if (sortArray[i]>sortArray[i+1])
+                    {
+                        int temp = sortArray[i];
+                        sortArray[i] = sortArray[i + 1];
+                        sortArray[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped);
+
+            //查看排序结果
+            foreach (var item in sortArray)
+            {
+               Console.WriteLine(item);
+            }
         }
     }
     
