@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Demo.Delegates
 {
@@ -23,7 +19,6 @@ namespace Demo.Delegates
         public void NewCar(string car)
         {
             Console.WriteLine("CarDealer,new car {0}",car);
-            
             RaiseNewCarInfo(car);
         }
 
