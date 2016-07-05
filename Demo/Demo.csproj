@@ -41,12 +41,14 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuddleSorter\BuddleSorter.cs" />
     <Compile Include="BuddleSorter\Employee.cs" />
     <Compile Include="Delegates\CarDealer.cs" />
     <Compile Include="Delegates\Consumer.cs" />
+    <Compile Include="Delegates\WeakCarInfoEventManager.cs" />
     <Compile Include="DocumentManager\Document.cs" />
     <Compile Include="DocumentManager\DocumentManager.cs" />
     <Compile Include="GetAStringDemo\Currency.cs" />

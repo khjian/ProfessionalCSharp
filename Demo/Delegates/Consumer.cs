@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace Demo.Delegates
 {
-    public class Consumer
+    public class Consumer:IWeakEventListener
     {
-        private string name;
+        private readonly string name;
 
         public Consumer(string name)
         {
@@ -18,6 +15,12 @@ namespace Demo.Delegates
         public void NewCarIsHere(object sender, CarInfoEventArgs e)
         {
             Console.WriteLine($"{name}: car {e.Car} is new");
+        }
+
+        public bool ReceiveWeakEvent(Type managerType, object sender, EventArgs e)
+        {
+            NewCarIsHere(sender,e as CarInfoEventArgs);
+            return true;
         }
     }
 }

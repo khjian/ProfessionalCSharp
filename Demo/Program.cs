@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Demo.Delegates;
 
 namespace Demo
@@ -18,17 +19,20 @@ namespace Demo
             var dealer = new CarDealer();
 
             var michael = new Consumer("Michael");
-            dealer.NewCarInfo += michael.NewCarIsHere;
-
+            WeakEventManager<CarDealer,CarInfoEventArgs>.AddHandler(dealer,
+                "NewCarInfo",michael.NewCarIsHere);
+            
             dealer.NewCar("Ferrari");
 
             var sebastian = new Consumer("Sebastian");
-            dealer.NewCarInfo += sebastian.NewCarIsHere;
+            WeakEventManager<CarDealer, CarInfoEventArgs>.AddHandler(dealer,
+               "NewCarInfo", sebastian.NewCarIsHere);
 
             dealer.NewCar("Mercedes");
 
-            dealer.NewCarInfo -= michael.NewCarIsHere;
-            
+            WeakEventManager<CarDealer, CarInfoEventArgs>.RemoveHandler(dealer,
+               "NewCarInfo", sebastian.NewCarIsHere);
+
             dealer.NewCar("Red Bull Racing");
 
             Console.ReadKey();
