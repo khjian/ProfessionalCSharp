@@ -51,6 +51,7 @@
     <Compile Include="Delegates\WeakCarInfoEventManager.cs" />
     <Compile Include="DocumentManager\Document.cs" />
     <Compile Include="DocumentManager\DocumentManager.cs" />
+    <Compile Include="FormattableVector.cs" />
     <Compile Include="GetAStringDemo\Currency.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="MathOperations.cs" />

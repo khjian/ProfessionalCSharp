@@ -16,24 +16,10 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            var dealer = new CarDealer();
-
-            var michael = new Consumer("Michael");
-            WeakEventManager<CarDealer,CarInfoEventArgs>.AddHandler(dealer,
-                "NewCarInfo",michael.NewCarIsHere);
-            
-            dealer.NewCar("Ferrari");
-
-            var sebastian = new Consumer("Sebastian");
-            WeakEventManager<CarDealer, CarInfoEventArgs>.AddHandler(dealer,
-               "NewCarInfo", sebastian.NewCarIsHere);
-
-            dealer.NewCar("Mercedes");
-
-            WeakEventManager<CarDealer, CarInfoEventArgs>.RemoveHandler(dealer,
-               "NewCarInfo", sebastian.NewCarIsHere);
-
-            dealer.NewCar("Red Bull Racing");
+            var v1 = new Vector(1,4,-5);
+            Console.WriteLine($"{v1,0:N}");
+            Console.WriteLine($"{v1,0:VE}");
+            Console.WriteLine(v1);
 
             Console.ReadKey();
         }
