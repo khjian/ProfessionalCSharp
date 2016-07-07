@@ -6,10 +6,12 @@ using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Demo.Delegates;
 using Demo.ListSamples;
+using Demo.QueueSample;
 
 namespace Demo
 {
@@ -18,43 +20,15 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            var graham = new Racer(7, "Graham", "Hill", "UK", 14);
-            var emerson = new Racer(13, "Emerson", "Fittipaldi", "Brazil", 14);
-            var mario = new Racer(16, "Mario", "Andretti", "USA", 12);
-            
-            //用集合初始化设定项添加
-            var racers= new List<Racer>(20) {graham,emerson,mario};
+            var dm = new DocumentManager();
+            ProcessDocuments.Start(dm);
 
-            //显示调用Add()方法来添加
-            racers.Add(new Racer(24,"Michale","Schumacher","Germany",91));
-            racers.Add(new Racer(27,"Mika","Hakkinen","Finland",20));
-
-            //使用List<T>类的AddRange()方法
-            racers.AddRange(new Racer[]
+            for (int i = 0; i < 1000; i++)
             {
-                new Racer(14,"Niki","Lauda","Austria",25),
-                new Racer(21,"Alain","Prost","France",51),  
-            });
-
-            foreach (var racer in racers)
-            {
-                Console.WriteLine(racer.ToString());
-            }
-
-            //ForEach方法
-            racers.ForEach(r=>Console.WriteLine($"{r:A}"));
-
-            //使用Find方法查找单个元素
-            racers.Add(new Racer(28,"Shujian","Song","China",90));
-            Racer racer1 = racers.Find(r => r.Country == "China");
-            Console.WriteLine($"{racer1:A}");
-
-            //使用FindAll查询符合条件的集合
-            List<Racer> bigWinners = racers.FindAll(r => r.Wins > 20);
-            Console.WriteLine("BigWinners:");
-            foreach (var bigWinner in bigWinners)
-            {
-                Console.WriteLine($"{bigWinner:A}");
+                var doc = new QueueSample.Document("Doc"+i.ToString(),"content");
+                dm.AddDocument(doc);
+                Console.WriteLine("Added document {0}",doc.Title);
+                Thread.Sleep(new Random().Next(20));
             }
 
             Console.ReadKey();
