@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Demo.LINQ;
@@ -10,16 +11,8 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            var ferrariDrivers = from r in
-                Formula1.GetChampion()
-                from c in r.Cars
-                where c == "Ferrari"
-                orderby r.LastName
-                select r;
-            foreach (var racer in ferrariDrivers)
-            {
-                Console.WriteLine(racer);
-            }
+            int pageSize = 5;
+            //int 
             Console.ReadKey();
         }
 
