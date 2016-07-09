@@ -7,6 +7,18 @@ using System.Threading.Tasks;
 
 namespace Demo.QueueSample
 {
+    /*
+     var dm = new DocumentManager();
+            ProcessDocuments.Start(dm);
+
+            for (int i = 0; i < 1000; i++)
+            {
+                var doc = new QueueSample.Document("Doc"+i.ToString(),"content");
+                dm.AddDocument(doc);
+                Console.WriteLine("Added document {0}",doc.Title);
+                Thread.Sleep(new Random().Next(20));
+            }
+         */
     public class ProcessDocuments
     {
         public ProcessDocuments(DocumentManager dm)

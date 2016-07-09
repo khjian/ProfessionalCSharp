@@ -54,6 +54,11 @@
     <Compile Include="FormattableVector.cs" />
     <Compile Include="GetAStringDemo\Currency.cs" />
     <Compile Include="LinkedList.cs" />
+    <Compile Include="LINQ\Championship.cs" />
+    <Compile Include="LINQ\Formula1.cs" />
+    <Compile Include="LINQ\Racer.cs" />
+    <Compile Include="LINQ\RacerInfo.cs" />
+    <Compile Include="LINQ\Team.cs" />
     <Compile Include="ListSamples\Racer.cs" />
     <Compile Include="MathOperations.cs" />
     <Compile Include="Person.cs" />

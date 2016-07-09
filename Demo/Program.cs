@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using Demo.Delegates;
-using Demo.ListSamples;
-using Demo.QueueSample;
+using Demo.LINQ;
 
 namespace Demo
 {
@@ -20,17 +10,16 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            var dm = new DocumentManager();
-            ProcessDocuments.Start(dm);
-
-            for (int i = 0; i < 1000; i++)
+            var ferrariDrivers = from r in
+                Formula1.GetChampion()
+                from c in r.Cars
+                where c == "Ferrari"
+                orderby r.LastName
+                select r;
+            foreach (var racer in ferrariDrivers)
             {
-                var doc = new QueueSample.Document("Doc"+i.ToString(),"content");
-                dm.AddDocument(doc);
-                Console.WriteLine("Added document {0}",doc.Title);
-                Thread.Sleep(new Random().Next(20));
+                Console.WriteLine(racer);
             }
-
             Console.ReadKey();
         }
 
@@ -102,5 +91,19 @@ namespace Demo
             ICat2 = IAnimail2;//逆变
      */
     #endregion
+
+    public static class StringExtension
+    {
+        public static string FirstName(this string name)
+        {
+            int ix = name.LastIndexOf(' ');
+            return name.Substring(0, ix);
+        }
+        public static string LastName(this string name)
+        {
+            int ix = name.LastIndexOf(' ');
+            return name.Substring(ix + 1);
+        }
+    }
 }
 
