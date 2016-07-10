@@ -22,6 +22,7 @@ namespace Demo.LINQ
             Wins = wins;
             Country = country;
             Starts = starts;
+
             Years = new List<int>(years);
             Cars = new List<string>(cars);
         }

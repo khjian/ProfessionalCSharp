@@ -1,33 +1,38 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Demo.LINQ;
 
 namespace Demo
 {
-
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            int pageSize = 5;
-            //int 
+            var brazilRacers = from r in Formula1.GetChampion()
+                where r.Country == "Brazil"
+                orderby r.Wins
+                select r;
+            foreach (var racer in brazilRacers)
+            {
+                Console.WriteLine(racer);
+            }
             Console.ReadKey();
         }
 
         #region int数组冒泡排序
-        static void sort(int[] sortArray)
+
+        private static void sort(int[] sortArray)
         {
-            bool swapped = true;
+            var swapped = true;
             do
             {
                 swapped = false;
-                for (int i = 0; i < sortArray.Length - 1; i++)
+                for (var i = 0; i < sortArray.Length - 1; i++)
                 {
                     if (sortArray[i] > sortArray[i + 1])
                     {
-                        int temp = sortArray[i];
+                        var temp = sortArray[i];
                         sortArray[i] = sortArray[i + 1];
                         sortArray[i + 1] = temp;
                         swapped = true;
@@ -41,40 +46,46 @@ namespace Demo
                 Console.WriteLine(item);
             }
         }
+
         #endregion
     }
-    
-    #region Animal
-    class Animal:IComparable<Animal>
-    {
-        public virtual void Eat()
-        {
-            Console.WriteLine("Animail eat");
-        }
 
+    #region Animal
+
+    internal class Animal : IComparable<Animal>
+    {
         public int CompareTo(Animal other)
         {
             return 1;
         }
+
+        public virtual void Eat()
+        {
+            Console.WriteLine("Animail eat");
+        }
     }
+
     #endregion
 
     #region Cat
-    class Cat : Animal,IComparable<Cat>
-    {
-        public override void Eat()
-        {
-            Console.WriteLine("Cat eat");
-        }
 
+    internal class Cat : Animal, IComparable<Cat>
+    {
         public int CompareTo(Cat other)
         {
             return 1;
         }
+
+        public override void Eat()
+        {
+            Console.WriteLine("Cat eat");
+        }
     }
+
     #endregion
 
     #region 协变和逆变
+
     /*
       IEnumerable<Cat> lCats = new List<Cat>();
             IEnumerable<Animal> lAnimals = lCats;//协变
@@ -83,20 +94,21 @@ namespace Demo
             IComparable<Animal> IAnimail2 = new Animal();
             ICat2 = IAnimail2;//逆变
      */
+
     #endregion
 
     public static class StringExtension
     {
         public static string FirstName(this string name)
         {
-            int ix = name.LastIndexOf(' ');
+            var ix = name.LastIndexOf(' ');
             return name.Substring(0, ix);
         }
+
         public static string LastName(this string name)
         {
-            int ix = name.LastIndexOf(' ');
+            var ix = name.LastIndexOf(' ');
             return name.Substring(ix + 1);
         }
     }
 }
-
