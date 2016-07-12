@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{538EE8EA-307E-4925-AEDA-E118E9A67755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncLib", "AsyncLib\AsyncLib.csproj", "{AA2ABEEB-2993-400B-ABCD-B1C66559A4A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncPatterns", "AsyncPatterns\AsyncPatterns.csproj", "{88EC492E-650B-4046-AEE3-9BACE4959437}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{538EE8EA-307E-4925-AEDA-E118E9A67755}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{538EE8EA-307E-4925-AEDA-E118E9A67755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{538EE8EA-307E-4925-AEDA-E118E9A67755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2ABEEB-2993-400B-ABCD-B1C66559A4A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2ABEEB-2993-400B-ABCD-B1C66559A4A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2ABEEB-2993-400B-ABCD-B1C66559A4A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2ABEEB-2993-400B-ABCD-B1C66559A4A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88EC492E-650B-4046-AEE3-9BACE4959437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88EC492E-650B-4046-AEE3-9BACE4959437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88EC492E-650B-4046-AEE3-9BACE4959437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88EC492E-650B-4046-AEE3-9BACE4959437}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
