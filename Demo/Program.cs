@@ -97,6 +97,7 @@ namespace Demo
 
     #endregion
 
+    #region 扩展方法
     public static class StringExtension
     {
         public static string FirstName(this string name)
@@ -111,4 +112,6 @@ namespace Demo
             return name.Substring(ix + 1);
         }
     }
+    #endregion
+
 }
