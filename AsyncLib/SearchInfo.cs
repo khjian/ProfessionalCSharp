@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AsyncLib
 {
-    public class SearchInfo:BindableBase
+    public class SearchInfo : BindableBase
     {
         public SearchInfo()
         {
@@ -20,13 +20,16 @@ namespace AsyncLib
         public string SearchTerm
         {
             get { return searchTerm; }
-            set { SetProperty(ref searchTerm,value);}
+            set { SetProperty(ref searchTerm, value); }
         }
-        private ObservableCollection<SearchItemResult> list;
 
+        private ObservableCollection<SearchItemResult> list;
         public ObservableCollection<SearchItemResult> List
         {
-            get { return list; }
+            get
+            {
+                return list;
+            }
         }
     }
 }

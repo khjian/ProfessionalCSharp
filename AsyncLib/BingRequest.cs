@@ -8,18 +8,15 @@ using System.Xml.Linq;
 
 namespace AsyncLib
 {
-    public class BingRequest:IImageRequest
+    public class BingRequest : IImageRequest
     {
         private const string AppId = "uU19nR0sgND2HjJ8co8eZW+d4FS5GBYUHp/PPCIbDx0";
 
-        public int Count { get; set; }
-        public int Offset { get; set; }
         public BingRequest()
         {
             Count = 50;
             Offset = 0;
         }
-
         private string searchTerm;
 
         public string SearchTerm
@@ -28,8 +25,18 @@ namespace AsyncLib
             set { searchTerm = value; }
         }
 
+        public string Url
+        {
+            get
+            {
+                return string.Format("https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/Image?Query=%27{0}%27&$top={1}&$skip={2}&$format=Atom", SearchTerm, Count, Offset);
+            }
+        }
 
-        public string Url => $"https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/Image?Query=%27{SearchTerm}%27&$top={Count}&$skip={Offset}&$format=Atom";
+
+
+        public int Count { get; set; }
+        public int Offset { get; set; }
 
         public IEnumerable<SearchItemResult> Parse(string xml)
         {
@@ -48,6 +55,13 @@ namespace AsyncLib
                     }).ToList();
         }
 
-        public ICredentials Credentials => new NetworkCredential(AppId,AppId);
+
+        public ICredentials Credentials
+        {
+            get
+            {
+                return new NetworkCredential(AppId, AppId);
+            }
+        }
     }
 }

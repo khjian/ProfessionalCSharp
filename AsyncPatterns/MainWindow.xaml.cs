@@ -1,19 +1,8 @@
 ﻿using AsyncLib;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AsyncPatterns
 {
@@ -75,12 +64,37 @@ namespace AsyncPatterns
 
         private void OnAsyncEventPattern(object sender, RoutedEventArgs e)
         {
-
+            foreach (var req in GetSearchRequests())
+            {
+                var client = new WebClient();
+                client.Credentials = req.Credentials;
+                client.DownloadStringCompleted += (sender1, e1) =>
+                {
+                    string resp = e1.Result;
+                    IEnumerable<SearchItemResult> images = req.Parse(resp);
+                    foreach (var image in images)
+                    {
+                        searchInfo.List.Add(image);
+                    }
+                };
+                client.DownloadStringAsync(new Uri(req.Url));
+            }
         }
 
-        private void OnTaskBasedAsyncPattern(object sender, RoutedEventArgs e)
+        private async void OnTaskBasedAsyncPattern(object sender, RoutedEventArgs e)
         {
+            foreach (var request in GetSearchRequests())
+            {
+                var client = new WebClient();
+                client.Credentials = request.Credentials;
+                string resp = await client.DownloadStringTaskAsync(request.Url);
 
+                IEnumerable<SearchItemResult> images = request.Parse(resp);
+                foreach (var image in images)
+                {
+                    searchInfo.List.Add(image);
+                }
+            }
         }
 
         private void OnCancel(object sender, RoutedEventArgs e)
@@ -91,10 +105,10 @@ namespace AsyncPatterns
         private IEnumerable<IImageRequest> GetSearchRequests()
         {
             return new List<IImageRequest>
-            {
-                new BingRequest() {SearchTerm = searchInfo.SearchTerm},
-                //new FlickrRequest() {SearchTerm = searchInfo.SearchTerm}
-            };
+              {
+                new BingRequest { SearchTerm = searchInfo.SearchTerm },
+                new FlickrRequest { SearchTerm = searchInfo.SearchTerm}
+              };
         }
     }
 }

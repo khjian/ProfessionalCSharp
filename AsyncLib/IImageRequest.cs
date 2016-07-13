@@ -11,7 +11,9 @@ namespace AsyncLib
     {
         string SearchTerm { get; set; }
         string Url { get; }
+
         IEnumerable<SearchItemResult> Parse(string xml);
+
         ICredentials Credentials { get; }
     }
 }
