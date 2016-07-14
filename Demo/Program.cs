@@ -9,14 +9,6 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
-            var brazilRacers = from r in Formula1.GetChampion()
-                where r.Country == "Brazil"
-                orderby r.Wins
-                select r;
-            foreach (var racer in brazilRacers)
-            {
-                Console.WriteLine(racer);
-            }
             Console.ReadKey();
         }
 
