@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BuddleSorter\BuddleSorter.cs" />
     <Compile Include="BuddleSorter\Employee.cs" />
+    <Compile Include="ClassAnalyzeType.cs" />
     <Compile Include="Delegates\CarDealer.cs" />
     <Compile Include="Delegates\Consumer.cs" />
     <Compile Include="Delegates\WeakCarInfoEventManager.cs" />

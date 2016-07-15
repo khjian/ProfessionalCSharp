@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Demo.LINQ;
+using System.Reflection;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Demo
 {
@@ -9,37 +9,11 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
+            Type t = typeof(int);
+            ClassAnalyzeType.AnalyzeType(t);
+
             Console.ReadKey();
         }
-
-        #region int数组冒泡排序
-
-        private static void sort(int[] sortArray)
-        {
-            var swapped = true;
-            do
-            {
-                swapped = false;
-                for (var i = 0; i < sortArray.Length - 1; i++)
-                {
-                    if (sortArray[i] > sortArray[i + 1])
-                    {
-                        var temp = sortArray[i];
-                        sortArray[i] = sortArray[i + 1];
-                        sortArray[i + 1] = temp;
-                        swapped = true;
-                    }
-                }
-            } while (swapped);
-
-            //查看排序结果
-            foreach (var item in sortArray)
-            {
-                Console.WriteLine(item);
-            }
-        }
-
-        #endregion
     }
 
     #region Animal
@@ -103,6 +77,40 @@ namespace Demo
             var ix = name.LastIndexOf(' ');
             return name.Substring(ix + 1);
         }
+    }
+    #endregion
+
+    #region 排序
+    public class SortSample
+    {
+        #region int数组冒泡排序
+
+        private static void sort(int[] sortArray)
+        {
+            var swapped = true;
+            do
+            {
+                swapped = false;
+                for (var i = 0; i < sortArray.Length - 1; i++)
+                {
+                    if (sortArray[i] > sortArray[i + 1])
+                    {
+                        var temp = sortArray[i];
+                        sortArray[i] = sortArray[i + 1];
+                        sortArray[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped);
+
+            //查看排序结果
+            foreach (var item in sortArray)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        #endregion
     }
     #endregion
 
