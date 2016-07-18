@@ -48,6 +48,8 @@
     <Compile Include="BuddleSorter\BuddleSorter.cs" />
     <Compile Include="BuddleSorter\Employee.cs" />
     <Compile Include="ClassAnalyzeType.cs" />
+    <Compile Include="ColdCall\ColdCallFileFormatException.cs" />
+    <Compile Include="ColdCall\ColdCallFileReader.cs" />
     <Compile Include="Delegates\CarDealer.cs" />
     <Compile Include="Delegates\Consumer.cs" />
     <Compile Include="Delegates\WeakCarInfoEventManager.cs" />
@@ -69,7 +71,9 @@
     <Compile Include="QueueSample\Document.cs" />
     <Compile Include="QueueSample\DocumentManager.cs" />
     <Compile Include="QueueSample\ProcessDocuments.cs" />
+    <Compile Include="ColdCall\SalesSpyFoundException.cs" />
     <Compile Include="SortHelper.cs" />
+    <Compile Include="ColdCall\UnexpectedException.cs" />
     <Compile Include="WalletThingBase.cs" />
   </ItemGroup>
   <ItemGroup>
