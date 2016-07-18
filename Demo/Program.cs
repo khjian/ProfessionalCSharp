@@ -10,43 +10,9 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
-            /*Type t = typeof(int);
-            ClassAnalyzeType.AnalyzeType(t);*/
+            Type t = typeof(int);
+            ClassAnalyzeType.AnalyzeType(t);
 
-            Console.WriteLine("Please type in the name of the file"+
-                "containing the names of the people to be cold called > ");
-            string fileName = Console.ReadLine();
-            var peopleToRing = new ColdCallFileReader();
-            try
-            {
-                peopleToRing.Open(fileName);
-                for (int i = 0; i < peopleToRing.NPeopleToRing; i++)
-                {
-                    peopleToRing.ProcessNextPerson();
-                }
-                Console.WriteLine("All callers processed correctly.");
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine($"The file {fileName} does not exist");
-            }
-            catch (ColdCallFileFormatException ex)
-            {
-                Console.WriteLine($"The file {fileName} appears to have been corrupted");
-                Console.WriteLine($"Details of problem are:{ex.Message}");
-                if (ex.InnerException != null)
-                {
-                    Console.WriteLine($"Inner exception was:{ex.InnerException.Message}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred:\n" + ex.Message);
-            }
-            finally
-            {
-                peopleToRing.Dispose();
-            }
 
             Console.ReadKey();
         }

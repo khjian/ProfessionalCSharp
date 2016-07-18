@@ -22,7 +22,7 @@ namespace Demo
             }
 
             Type tUnderlyingSystem = t.UnderlyingSystemType;
-            AddToOutput("tUnderlyingSystem:" + tUnderlyingSystem);
+            AddToOutput("UnderlyingSystem:" + tUnderlyingSystem);
             AddToOutput("\nPUBLIC MEMBERS:");
             MemberInfo[] members = t.GetMembers();
             foreach (var memberInfo in members)
