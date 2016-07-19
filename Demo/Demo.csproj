@@ -50,6 +50,7 @@
     <Compile Include="ClassAnalyzeType.cs" />
     <Compile Include="ColdCall\ColdCallFileFormatException.cs" />
     <Compile Include="ColdCall\ColdCallFileReader.cs" />
+    <Compile Include="DeepThought.cs" />
     <Compile Include="Delegates\CarDealer.cs" />
     <Compile Include="Delegates\Consumer.cs" />
     <Compile Include="Delegates\WeakCarInfoEventManager.cs" />

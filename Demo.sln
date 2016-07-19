@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncPatterns", "AsyncPatte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foundation", "Foundation\Foundation.csproj", "{591C0C37-951A-4BAC-906E-09683B7F277C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTests", "DemoTests\DemoTests.csproj", "{06FB99FB-A68F-4A44-831B-FC70BF62768E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{591C0C37-951A-4BAC-906E-09683B7F277C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{591C0C37-951A-4BAC-906E-09683B7F277C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{591C0C37-951A-4BAC-906E-09683B7F277C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06FB99FB-A68F-4A44-831B-FC70BF62768E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06FB99FB-A68F-4A44-831B-FC70BF62768E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06FB99FB-A68F-4A44-831B-FC70BF62768E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06FB99FB-A68F-4A44-831B-FC70BF62768E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
