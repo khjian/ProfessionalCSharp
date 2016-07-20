@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DeepThoughtTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringSampleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Demo\Demo.csproj">

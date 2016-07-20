@@ -75,6 +75,7 @@
     <Compile Include="ColdCall\SalesSpyFoundException.cs" />
     <Compile Include="SortHelper.cs" />
     <Compile Include="ColdCall\UnexpectedException.cs" />
+    <Compile Include="StringSample.cs" />
     <Compile Include="WalletThingBase.cs" />
   </ItemGroup>
   <ItemGroup>
