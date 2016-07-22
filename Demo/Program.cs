@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -10,13 +11,13 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
-            Type t = typeof(int);
-            ClassAnalyzeType.AnalyzeType(t);
-
-
+            int b=new ContractProgram.Demo().Deposit(1);
+            Console.WriteLine(b);
             Console.ReadKey();
         }
     }
+
+    
 
     #region Animal
 
