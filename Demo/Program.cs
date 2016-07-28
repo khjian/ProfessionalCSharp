@@ -11,9 +11,14 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
-            int b=new ContractProgram.Demo().Deposit(1);
-            Console.WriteLine(b);
             Console.ReadKey();
+        }
+
+        private int x = 5;
+        [ContractInvariantMethod]
+        public void ObjectInvariant()
+        {
+            Contract.Invariant(x>5);
         }
     }
 
