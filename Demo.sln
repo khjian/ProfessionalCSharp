@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyB", "AssemblyB\Asse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedDemo", "SharedDemo\SharedDemo.csproj", "{B15FBBF3-DDD1-4DA3-A30F-ABDDA7FD1A2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelDemo", "ParallelDemo\ParallelDemo.csproj", "{B09F1EBE-045D-4F7B-AB5C-1303826D215F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{B15FBBF3-DDD1-4DA3-A30F-ABDDA7FD1A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B15FBBF3-DDD1-4DA3-A30F-ABDDA7FD1A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B15FBBF3-DDD1-4DA3-A30F-ABDDA7FD1A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B09F1EBE-045D-4F7B-AB5C-1303826D215F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B09F1EBE-045D-4F7B-AB5C-1303826D215F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B09F1EBE-045D-4F7B-AB5C-1303826D215F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B09F1EBE-045D-4F7B-AB5C-1303826D215F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
