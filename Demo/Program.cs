@@ -15,13 +15,43 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
-            string[] data = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
-            ParallelLoopResult result = Parallel.ForEach<string>(data, s =>
-            {
-                Console.WriteLine(s);
-                Thread.Sleep(10);
-            });
+            ParentTask();
             Console.ReadKey();
+        }
+
+        static void ParentAndChild()
+        {
+            var parent = new Task(ParentTask);
+            parent.Start();
+            Thread.Sleep(2000);
+            Console.WriteLine(parent.Status);
+            Thread.Sleep(4000);
+            Console.WriteLine(parent.Status);
+        }
+
+        static void ParentTask()
+        {
+            Console.WriteLine($"task id {Task.CurrentId}");
+            var child = new Task(ChildTask);
+            child.Start();
+            Thread.Sleep(1000);
+            Console.WriteLine("parent started child");
+        }
+
+        static void ChildTask()
+        {
+            Console.WriteLine("child");
+            Thread.Sleep(5000);
+            Console.WriteLine("child finished");
+        }
+
+        static object taskMethoLock = new object();
+        static void TaskMethod(object title)
+        {
+            lock (taskMethoLock)
+            {
+                Console.WriteLine(title);
+            }
         }
     }
 
