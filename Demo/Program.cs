@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Security.Cryptography;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Demo
 {
@@ -11,14 +15,13 @@ namespace Demo
     {
         private static void Main(string[] args)
         {
+            string[] data = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+            ParallelLoopResult result = Parallel.ForEach<string>(data, s =>
+            {
+                Console.WriteLine(s);
+                Thread.Sleep(10);
+            });
             Console.ReadKey();
-        }
-
-        private int x = 5;
-        [ContractInvariantMethod]
-        public void ObjectInvariant()
-        {
-            Contract.Invariant(x>5);
         }
     }
 
