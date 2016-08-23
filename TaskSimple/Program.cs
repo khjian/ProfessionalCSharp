@@ -11,9 +11,14 @@ namespace TaskSimple
     {
         static void Main(string[] args)
         {
-            ParentAndChild();
-            Console.ReadKey();
+           var t1 = new Thread(ThreadMain)
+           { Name = "MyNewThread",IsBackground = false};
+           Console.ReadKey();
         }
+
+        static void ThreadMain()
+        { }
+
 
         static void ParentAndChild()
         {
