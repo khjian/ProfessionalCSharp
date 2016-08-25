@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -11,14 +12,15 @@ namespace TaskSimple
     {
         static void Main(string[] args)
         {
-           var t1 = new Thread(ThreadMain)
-           { Name = "MyNewThread",IsBackground = false};
-           Console.ReadKey();
+            var state1 = new StateObject();
+            var state2 = new StateObject();
+            new Task(new SampleTask(state1,state2).Deadlock1).Start();
+            new Task(new SampleTask(state1, state2).Deadlock2).Start();
+            Console.ReadKey();
         }
 
         static void ThreadMain()
         { }
-
 
         static void ParentAndChild()
         {
@@ -54,5 +56,30 @@ namespace TaskSimple
                 Console.WriteLine(title);
             }
         }
+
+        static object obj = new object();
+        static void TaskMethod()
+        {
+            bool lockTaken = false;
+            Monitor.TryEnter(obj, 500, ref lockTaken);
+            if (lockTaken)
+            {
+                try
+                {
+                    //acquired the lock
+                    //synchronized region for obj
+                }
+                finally
+                {
+                    Monitor.Exit(obj);
+                }
+            }
+            else
+            {
+                //did't get the lock,do something else
+            }
+        }
     }
+
+    
 }
