@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelDemo", "ParallelDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSimple", "TaskSimple\TaskSimple.csproj", "{DA2867C7-258F-4B4B-BC51-CB075AAB5EC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOperate", "FileOperate\FileOperate.csproj", "{7018F59C-59AF-4097-978C-46AF16250784}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{DA2867C7-258F-4B4B-BC51-CB075AAB5EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA2867C7-258F-4B4B-BC51-CB075AAB5EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA2867C7-258F-4B4B-BC51-CB075AAB5EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7018F59C-59AF-4097-978C-46AF16250784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7018F59C-59AF-4097-978C-46AF16250784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7018F59C-59AF-4097-978C-46AF16250784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7018F59C-59AF-4097-978C-46AF16250784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
