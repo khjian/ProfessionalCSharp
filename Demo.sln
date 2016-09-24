@@ -41,6 +41,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketConsoleClient", "Sock
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteServer", "QuoteServer\QuoteServer.csproj", "{38BE530E-2D39-4D05-BDC9-C1F6814BDB41}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "服务", "服务", "{E0BA0984-F75F-4256-AB35-48FED9E31CCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteServerTest", "QuoteServerTest\QuoteServerTest.csproj", "{64FE1747-5056-4A91-B7CE-12FC4C616B65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteClient", "QuoteClient\QuoteClient.csproj", "{0FCBDF46-0C96-4684-A5A0-2C529E581B7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,8 +129,21 @@ Global
 		{38BE530E-2D39-4D05-BDC9-C1F6814BDB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38BE530E-2D39-4D05-BDC9-C1F6814BDB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38BE530E-2D39-4D05-BDC9-C1F6814BDB41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64FE1747-5056-4A91-B7CE-12FC4C616B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FE1747-5056-4A91-B7CE-12FC4C616B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FE1747-5056-4A91-B7CE-12FC4C616B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FE1747-5056-4A91-B7CE-12FC4C616B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FCBDF46-0C96-4684-A5A0-2C529E581B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FCBDF46-0C96-4684-A5A0-2C529E581B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FCBDF46-0C96-4684-A5A0-2C529E581B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FCBDF46-0C96-4684-A5A0-2C529E581B7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38BE530E-2D39-4D05-BDC9-C1F6814BDB41} = {E0BA0984-F75F-4256-AB35-48FED9E31CCD}
+		{64FE1747-5056-4A91-B7CE-12FC4C616B65} = {E0BA0984-F75F-4256-AB35-48FED9E31CCD}
+		{0FCBDF46-0C96-4684-A5A0-2C529E581B7D} = {E0BA0984-F75F-4256-AB35-48FED9E31CCD}
 	EndGlobalSection
 EndGlobal

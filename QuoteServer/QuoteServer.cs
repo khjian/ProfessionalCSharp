@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
@@ -65,13 +66,46 @@ namespace QuoteServer
         {
             try
             {
-
+                IPAddress ipAddress = IPAddress.Any;
+                listener = new TcpListener(ipAddress, port);
+                listener.Start();
+                while (true)
+                {
+                    Socket clientSocket = listener.AcceptSocket();
+                    string message = GetRandomQuoteOfTheDay();
+                    var encoder = new UnicodeEncoding();
+                    byte[] buffer = encoder.GetBytes(message);
+                    clientSocket.Send(buffer, buffer.Length, 0);
+                    clientSocket.Close();
+                }
             }
-            catch (Exception)
+            catch (SocketException ex)
             {
-                
-                throw;
+                Trace.TraceError($"QuoteServer {ex.Message}");
+                throw new QuoteException("socket error",ex);
             }
+        }
+
+        public void Start()
+        {
+            ReadQuotes();
+            listenerTask = Task.Factory.StartNew(Listener,
+                TaskCreationOptions.LongRunning);
+        }
+
+        public void Stop()
+        {
+            listener.Stop();
+        }
+
+        public void Suspend()
+        {
+            listener.Stop();
+        }
+
+        public void Resume()
+        {
+            Start();
         }
     }
 
