@@ -86,6 +86,8 @@ namespace QuoteServer
             }
         }
 
+        #region 控制
+
         public void Start()
         {
             ReadQuotes();
@@ -107,6 +109,14 @@ namespace QuoteServer
         {
             Start();
         }
+
+        #endregion
+
+        public void RefreshQuotes()
+        {
+            ReadQuotes();
+        }
+
     }
 
     public class QuoteException : Exception
