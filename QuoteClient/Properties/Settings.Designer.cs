@@ -37,7 +37,7 @@ namespace QuoteClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4567")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7890")]
         public int PortNumber {
             get {
                 return ((int)(this["PortNumber"]));

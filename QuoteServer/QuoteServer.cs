@@ -9,7 +9,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuoteServer
+namespace QuoteService
 {
     public class QuoteServer
     {
@@ -123,7 +123,6 @@ namespace QuoteServer
     {
         public QuoteException(string quoteFileIsEmpty)
         {
-            throw new NotImplementedException();
         }
 
         public QuoteException(string message, Exception innerException) : base(message, innerException)

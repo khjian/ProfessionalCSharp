@@ -13,7 +13,7 @@ namespace QuoteService
 {
     public partial class QuoteService : ServiceBase
     {
-        private QuoteServer.QuoteServer quoteServer;
+        private QuoteServer quoteServer;
         public QuoteService()
         {
             InitializeComponent();
@@ -21,8 +21,9 @@ namespace QuoteService
 
         protected override void OnStart(string[] args)
         {
-            quoteServer = new QuoteServer.QuoteServer(Path.Combine(
+            quoteServer = new QuoteServer(Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,"quotes.txt"));
+            quoteServer.Start();
         }
 
         protected override void OnStop()

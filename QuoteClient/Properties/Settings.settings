@@ -6,7 +6,7 @@
       <Value Profile="(Default)">localhost</Value>
     </Setting>
     <Setting Name="PortNumber" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">4567</Value>
+      <Value Profile="(Default)">7890</Value>
     </Setting>
   </Settings>
 </SettingsFile>
