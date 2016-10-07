@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteClient", "QuoteClient\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteService", "QuoteService\QuoteService.csproj", "{08DFEABF-402B-4A51-825F-350CFBE7B2A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceControl", "ServiceControl\ServiceControl.csproj", "{32BB6215-FA30-46E9-87E2-2866FCA89AFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -143,6 +145,10 @@ Global
 		{08DFEABF-402B-4A51-825F-350CFBE7B2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08DFEABF-402B-4A51-825F-350CFBE7B2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08DFEABF-402B-4A51-825F-350CFBE7B2A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BB6215-FA30-46E9-87E2-2866FCA89AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BB6215-FA30-46E9-87E2-2866FCA89AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BB6215-FA30-46E9-87E2-2866FCA89AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BB6215-FA30-46E9-87E2-2866FCA89AFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,5 +158,6 @@ Global
 		{64FE1747-5056-4A91-B7CE-12FC4C616B65} = {E0BA0984-F75F-4256-AB35-48FED9E31CCD}
 		{0FCBDF46-0C96-4684-A5A0-2C529E581B7D} = {E0BA0984-F75F-4256-AB35-48FED9E31CCD}
 		{08DFEABF-402B-4A51-825F-350CFBE7B2A4} = {E0BA0984-F75F-4256-AB35-48FED9E31CCD}
+		{32BB6215-FA30-46E9-87E2-2866FCA89AFB} = {E0BA0984-F75F-4256-AB35-48FED9E31CCD}
 	EndGlobalSection
 EndGlobal
