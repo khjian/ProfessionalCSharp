@@ -119,14 +119,15 @@ namespace QuoteService
 
     }
 
+    [Serializable]
     public class QuoteException : Exception
     {
-        public QuoteException(string quoteFileIsEmpty)
-        {
-        }
-
-        public QuoteException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
+        public QuoteException() { }
+        public QuoteException(string message) : base(message) { }
+        public QuoteException(string message, Exception inner) : base(message, inner) { }
+        protected QuoteException(
+        System.Runtime.Serialization.SerializationInfo info,
+        System.Runtime.Serialization.StreamingContext context)
+          : base(info, context) { }
     }
 }
